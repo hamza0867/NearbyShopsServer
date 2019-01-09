@@ -1,0 +1,24 @@
+{
+  "name": "nearbyshopsserver",
+  "version": "0.1.0",
+  "description": "the server of the nearbyshops app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamza0867/NearbyShopsServer.git"
+  },
+  "author": "Hamza Benkhaldoun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamza0867/NearbyShopsServer/issues"
+  },
+  "homepage": "https://github.com/hamza0867/NearbyShopsServer#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.10"
+  }
+}

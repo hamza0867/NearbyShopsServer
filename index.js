@@ -26,4 +26,36 @@ app.use(function(req, res, next) {
             res.send(JSON.stringify(user));
         });
     })
+    .post("/nbshops/shops/like", urlencodedParser, (req, res) => {
+        res.setHeader("Content-Type", "application/json");
+        nbshopsdb
+            .addLikedShop(req.body.userName, JSON.parse(req.body.shop))
+            .then(likedShops => {
+                res.send(JSON.stringify(likedShops));
+            });
+    })
+    .post("/nbshops/shops/dislike", urlencodedParser, (req, res) => {
+        res.setHeader("Content-Type", "application/json");
+        nbshopsdb
+            .addDislikedShop(req.body.userName, JSON.parse(req.body.shop))
+            .then(dislikedShops => {
+                res.send(JSON.stringify(dislikedShops));
+            });
+    })
+    .post("/nbshops/shops/unlike", urlencodedParser, (req, res) => {
+        res.setHeader("Content-Type", "application/json");
+        nbshopsdb
+            .removeLikedShop(req.body.userName, JSON.parse(req.body.shop))
+            .then(likedShops => {
+                res.send(JSON.stringify(likedShops));
+            });
+    })
+    .post("/nbshops/shops/undislike", urlencodedParser, (req, res) => {
+        res.setHeader("Content-Type", "application/json");
+        nbshopsdb
+            .removeDislikedShop(req.body.userName, JSON.parse(req.body.shop))
+            .then(dislikedShops => {
+                res.send(JSON.stringify(dislikedShops));
+            });
+    })
     .listen(8080);
